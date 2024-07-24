@@ -1,361 +1,289 @@
-/* .main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 8vh; 
-    padding-bottom: 8vh; 
-    width: 100vw;
-} */
 body {
     margin: 0;
     padding: 0;
-    overflow: auto;
+    box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    
 }
-.background {
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(203,203,203,255);
+    width: 100%;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(to right, #ff012b, #ffffff);
-    animation: changeColor 2s infinite;
+    z-index: 1000;
 }
-@keyframes changeColor {
-    0% {
-        background: linear-gradient(to right, #ff012b, #ffffff);
-    }
-    50% {
-        background: linear-gradient(to right, #ffffff, #0026ff);
-    } 
-}
-
-
-.cont {
+.center, .right {
     display: flex;
     align-items: center;
+}
+.right {
     justify-content: center;
-    gap: 5vw;
-    width: 90vw;
-    margin-top: 5vh;
-    padding: 4vw 4vw 0vw 4vw;
-
 }
-
-.logo img {
-    width: 16vw;
+.left img {
+    max-width: 100%;
+    border-radius: 30%;
     height: auto;
-    border-radius: 45%;
+    width: 14vw;
+    justify-content: center;
+    margin-left: 2vw;
+    animation: wiggle .3s ease-in-out infinite;
 }
 
-.ticker {
-    font-family: "Changa", sans-serif;
-    font-size: 10vw;
-    color: rgb(255, 255, 255);
-    text-shadow: 
-    -1px -1px 0 #000,  
-     3px -1px 0 #000,
-    -1px  1px 0 #000,
-     5px  1px 0 #000;
-    margin: 0;
-    padding: 0;
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
+@keyframes wiggle {
     0% {
-        transform: scale(1);
-        
+        transform: rotate(0deg); /* Start with no rotation */
+    }
+    25% {
+        transform: rotate(5deg); /* Rotate 5 degrees to the right */
     }
     50% {
-        transform: scale(1.1);
-        
+        transform: rotate(0deg); /* Rotate back to the original position */
+    }
+    75% {
+        transform: rotate(-5deg); /* Rotate 5 degrees to the left */
     }
     100% {
-        transform: scale(1);
-        
+        transform: rotate(0deg); /* End with no rotation */
     }
 }
 
-
-
-.ca {
-    font-family: "Changa", sans-serif;
-    font-size: 2.75vw;
-    font-weight: 800;
-    color: rgb(0, 0, 0);
-    margin: 0;
-    margin-bottom: 5vh;
-    
-}
-
-
-.r img {
-    padding: 5vh;
-    max-width: 50%; 
-    height: auto;
-}
-
-
-
-.content {
+.center{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     text-align: center;
-    color: rgb(0, 0, 0);
-    z-index: 1;
-    font-family: "Viga", sans-serif;
-    width: 100vh; /* Ensure .content takes full width */
-    /*height: 100%;*/ /* Ensure .content takes full height */
-    height: calc(100% - 50px); /* Luc added this */
-    display: flex; /* Make .content a flex container */
-     /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    flex-direction: column; 
-    z-index: 1; /* Luc added this */
-    margin-top: 5vh;/* Luc added this */
-    font-family: "Changa", sans-serif;
-}
-
-.sub {
-    font-size: 3vw;
+    color: #000000;
+    font-size: 5vh;
+    height: 100%;
     margin: 0;
-    font-family: "Viga", sans-serif;
-    padding-bottom: 6vh;
-    
 }
-
-
-.r {
-    margin-top: 5vh;
-    font-size: 2.5vw;
-    margin: 20px;
-    font-family: "Viga", sans-serif;
-    
-}
-header {
-    width: 100vw;
-    height: 15vh;
-    background-color: #fff;
-    color: #000;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    
-}
-
-
-.left, .right {
-    display: flex;
-    align-items: center;
-    width: 16vw;
-}
-
-.left {
-    display: flex;
-}
-
-.left button {
-    padding: 2vh 2vw;
-    background-color: rgb(255, 0, 122);
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 12px;
-    width: 12vw;
-    height: auto;
-    font-family: "Viga", sans-serif;
-    font-size: 1.5vw
-    
-}
-
-.center {
-    font-size: 4vw;
-    text-align: center;
-    font-family: "Viga", sans-serif;
-    width: 50%;
-    flex-grow: 0;
-    
-}
-
-.center h1 {
-    margin: 0;
-    
-}
-
-.right {
-    display: flex;
-    align-items: center;
-    width: auto;
-    height: auto;
-    
-}
-
-.right a img {
+.right img {
+    max-width: 100%;
     display: block;
     height: auto;
-    width: 4vw;
-    
+    width: 6vw;
 }
-
-a.icon {
+.icon {
     margin: 0 1vw;
-
 }
-
-.infosect {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2vh;
-    margin-bottom: 8vh;
-    gap: 5vw;
-    color: rgb(255, 255, 255);
-    animation: pulse 1.5s infinite;
-}
-
-.bubble-text {
+.saying {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 18vh;
+    background-color: rgba(203,203,203,255);
+    width: 100%;
+    height: 100%;
+    padding: 5vw 0;
+    font-size: 5vw;
+    text-align: center;
+    color: #ffffffd0;
+    text-shadow:  .75vw .75vw 12px #00000077;
+    border-color: rgba(203,203,203,255);
+    margin-bottom: -5vh;
+    }
+.name {
+    font-family: "Pacifico", cursive;
     margin: 0;
-    font-size: 4.5vw;
-    font-family: "Changa", sans-serif;
-}
-
-.dcont {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-}
-
-.desc {
-    flex: 1;
-    padding-right: 20px;
-    text-align: center;
-    font-family: "Viga", sans-serif;
-    font-size: 3vh;
-}
-
-.desc h2 {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.repimg {
-    flex: 1;
-}
-
-.repimg img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.title {
-    font-size: 5vh;
-    margin-bottom: 20px;
+    padding-bottom: 5vh;
+    background: rgba(203,203,203,255);
     width: 100%;
     text-align: center;
-    border-bottom: 2px solid #ddd; /* Optional: a border to visually separate the title */
-    padding-bottom: 10px;
-    font-family: "Viga", sans-serif;
-}
 
-.flex-cont {
+}
+.content {
+    margin-top: 0vh;
+    padding: 1vh 0vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    text-align: left; /* Align text to the left for the description */
+    flex-grow: 1;
+    width: 100%;
     flex-direction: column;
-    margin-bottom: 5vh;
-}
-
-footer {
-    background: #000000;
-    color: #fff;
-    padding: 1vh 0;
-    width: 100vw;
-    height: auto;
+    background-image: url(./images/demlogo.jpg);
+    background-size: 12vw;
+    background-position: center;
+} 
+.slogan {
+    font-size: 5vw;
     text-align: center;
-    bottom: 0;
-    font-family: "Viga", sans-serif;
-    font-size: 2vh;
-    position: fixed;
+    color: #000000;
+    text-shadow:  1vw 1vw 12px #000000;
+    -webkit-text-stroke: .4vh #000000;
 }
-
-.blink {
+.video-container {
+    border: 5px solid #000;
+    padding: 10px;
+    background-color: #000000;
+    margin-bottom: 20vh;
+    max-width: 100%; /* Ensure it doesn’t overflow */
+    box-sizing: border-box;
+    margin-top: 22vh;
+}
+video {
+    width: 100%; /* Make video fill the container */
+    height: auto; /* Maintain aspect ratio */
+}
+.desc {
+    text-align: center;
+    margin: 5vh 20vw;
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 5vh;
+}
+.question {
+    font-weight: 1000;
+}
+.desc-container {
+    background-color: rgba(203,203,203,255);
+    border: .5vh solid #000; /* 2px wide black border */
+    padding: 3vh 0;
+    margin: 3vh;
+    margin-bottom: 10vh;
+}
+.bkimage img {
+    margin: 10vh;
+    border: .5vh solid #000;
+}
+.bkimage {
+    margin-bottom: 10vh;
+}
+.tcontainer {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center; /* Center the images horizontally */
-    align-items: center; /* Center the images vertically (if necessary) */
-    gap: 2vw; /* Adjust the gap between images as needed */
-    padding-bottom: 3vh;
-    
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(203,203,203,255);
+    border: .5vh solid #000;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 22vh;
+}
+.knomics {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+    font-size: 6vw;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0;
+    color: #000000;
+}
+.boxes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.box {
+    background-color: #000000; /* Semi-transparent white */
+    border: 2px solid #000000;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    font-size: 4vw;
+    color: rgba(255, 255, 255, 0.774);
+}
+footer {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
-.blink a {
-    display: inline-block;
-}
-
-.blink img {
-    display: block; /* Ensure the images are block elements */
-    width: 8vw; /* Adjust the width as needed */
-    height: auto;
-    object-fit: cover;
-}
-
-
-@media (max-width: 768px) {
-    .ticker {
-        font-size: 15vw; /* Adjust font size for smaller screens */
-    }
-
-    .logo img {
-        width: 20vw;
-        height: auto; /* Adjust image size for smaller screens */
-    }
-
-    .ca {
-        font-size: 3.5vw; /* Adjust font size for smaller screens */
-        margin-bottom: 2vh;
-    }
-
-    .rt {
-        width: 90vw;
-    }
-
-    .r {
-        font-size: 4.75vw;
-    }
+    /* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+        .header {
+            flex-direction: row;
+            align-items: center;
+            padding: 0 10%;
+        }
     
-    .sub {
-        font-size: 8vw;
-        padding-bottom: 4vh;
-    }
+        .left, .center, .right {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+    
+        .left img, .right img {
+            width: 20vw; /* Adjust size for mobile */
+        }
+    
+        .center h1 {
+            font-size: 4vh; /* Adjust font size for mobile */
+        }
+    
+        .icon {
+            margin: 0 2vw; /* Adjust margin for mobile */
+        }
+    
     
 
-    .center {
-        font-size: 4vw;
+    .saying {
+        font-size: 6vw; /* Adjusted font size for mobile */
+        margin-top: 8vh;/* Adjusted padding for mobile */
+        width: 100%;
+        padding: 2vh 0;
+        margin-bottom: 0;
     }
 
-    header {
-        height: 10vh;
+    .name {
+        font-size: 5vw;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(203,203,203,255);
+        padding-bottom: 2vh;
     }
 
-    .cont {
-        margin-top: 3vh;
-    }
-
-    .blink {
-        padding-bottom: 0;
-    }
-
-    .infosect {
+    .desc-container {
         margin-top: 0;
-        margin-bottom: 2vh;
     }
-}
+
+    .desc {
+        margin: 5vh 5vw; /* Adjusted margin for mobile */
+        font-size: 4vh; /* Adjusted font size for mobile */
+    }
+
+    .tcontainer {
+        width: 80vw;
+        padding: 10px;
+        font-size: 2vw;
+        margin-bottom: 15vh; /* Adjusted margin */
+    }
+
+    .knomics {
+        font-size: 12vw; 
+    }
+
+    .box {
+        font-size: 7vw; /* Adjusted font size for mobile */
+    }
+
+    .video-container {
+        padding: 5px; /* Adjust padding for mobile */
+        margin-bottom: 10vh; /* Adjust margin for mobile */
+        margin-top: 11vh;
+        width: 89vw;
+    }
+    }
+    .bkimage img {
+        margin: 0;
+        width: 87vw;
+    }
+
+
+
